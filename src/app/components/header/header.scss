@@ -1,0 +1,43 @@
+@use '../../variables' as styles;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid styles.$secondary;
+
+  &__logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: styles.$light;
+
+    &:hover {
+      color: styles.$primary;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+
+    a {
+      color: styles.$light;
+      font-weight: 700;
+      font-size: 1rem;
+
+      &:hover {
+        color: styles.$primary;
+      }
+    }
+  }
+}

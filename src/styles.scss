@@ -1,25 +1,15 @@
+@use "sass:color";
+@use 'app/variables' as vars;
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap');
-
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/maps";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
-@import "bootstrap/scss/reboot";
-@import "bootstrap/scss/grid";
-
-$primary: #DD0031;
-$dark: #1A1A1A;
-$light: #F5F5FF;
-$secondary: #424242;
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: $dark;
-  color: $light;
+  background-color: vars.$dark;
+  color: vars.$light;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
@@ -32,15 +22,15 @@ h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: $light;
+  color: vars.$light;
 }
 
 a {
-  color: $primary;
+  color: vars.$primary;
   text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {
-    color: lighten($primary, 10%);
+    color: color.adjust(vars.$primary, $lightness: 10%);
   }
 }
