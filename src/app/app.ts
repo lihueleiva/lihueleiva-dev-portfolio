@@ -5,12 +5,13 @@ import { About } from './components/about/about';
 import { Skills } from "./components/skills/skills";
 import { ProjectsComponent } from './components/projects/projects';
 import { CertificationsComponent } from './components/certifications/certifications';
+import { Contact } from "./components/contact/contact";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Header, Hero, About, Skills, ProjectsComponent, CertificationsComponent],
+  imports: [Header, Hero, About, Skills, ProjectsComponent, CertificationsComponent, Contact],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
