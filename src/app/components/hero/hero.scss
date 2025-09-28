@@ -1,0 +1,77 @@
+@use 'sass:color';
+@use '../../variables' as styles;
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+
+    &--color {
+      color: styles.$primary;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: styles.$light;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: color.adjust(styles.$light, $lightness: -20%);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: styles.$secondary;
+    margin: 0 auto;
+    border: 5px solid styles.$secondary;
+  }
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &--primary {
+    background-color: styles.$primary;
+    color: styles.$light;
+    border: 2px solid styles.$primary;
+
+    &:hover {
+      background-color: color.adjust(styles.$primary, $lightness: -5%);
+      transform: translateY(-3px);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: styles.$light;
+    border: 2px solid styles.$secondary;
+
+    &:hover {
+      background-color: styles.$secondary;
+      transform: translateY(-3px);
+    }
+  }
+}
