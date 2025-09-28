@@ -1,0 +1,50 @@
+@use 'sass:color';
+@use '../../variables' as styles;
+
+.about {
+  padding: 6rem 0;
+  border-top: 1px solid styles.$secondary;
+
+  &__image-container {
+    width: 380px;
+    height: 380px;
+    background-color: styles.$secondary;
+    border-radius: 30px;
+    margin: 0 auto 2rem auto;
+    transform: rotate(-6deg);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__content {
+    padding-left: 2rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50%;
+      height: 4px;
+      background-color: styles.$primary;
+    }
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: color.adjust(styles.$light, $lightness: -15%);
+    margin-bottom: 1.5rem;
+  }
+}
