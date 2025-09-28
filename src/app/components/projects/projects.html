@@ -1,0 +1,28 @@
+<section id="projects" class="projects container">
+  <h2 class="projects__title">Mis Proyectos</h2>
+
+  @for (project of projects; track project.title; let i = $index) {
+    <div class="project-card row align-items-center">
+      <div class="col-12 col-lg-7" [class.order-lg-2]="i % 2 === 0">
+        <div class="project-card__image-container">
+          <img [src]="project.imageUrl" [alt]="'Captura de pantalla del proyecto ' + project.title">
+        </div>
+      </div>
+      <div class="col-12 col-lg-5" [class.order-lg-1]="i % 2 === 0">
+        <div class="project-card__content">
+          <h3 class="project-card__title">{{ project.title }}</h3>
+          <p class="project-card__description">{{ project.description }}</p>
+          <div class="project-card__technologies">
+            @for (tech of project.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+          <div class="project-card__buttons">
+            <a [href]="project.githubUrl" target="_blank" class="btn btn--secondary">Ver Código</a>
+            <a [href]="project.liveUrl" target="_blank" class="btn btn--primary">Ver Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</section>
