@@ -1,0 +1,41 @@
+@use 'sass:color';
+@use '../../variables' as styles;
+
+.footer {
+  background-color: styles.$dark;
+  border-top: 1px solid styles.$secondary;
+  padding: 2rem 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copyright {
+    margin: 0;
+    color: color.adjust(styles.$light, $lightness: -40%);
+    font-size: 0.9rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: color.adjust(styles.$light, $lightness: -40%);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: styles.$primary;
+        transform: translateY(-3px);
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+      }
+    }
+  }
+}
