@@ -32,6 +32,7 @@
     border-radius: 15px;
     border: 1px solid styles.$secondary;
     height: 100%;
+    margin-bottom: 2rem;
 
     h3 {
       font-size: 1.5rem;
@@ -57,16 +58,16 @@
   border-radius: 8px;
   background-color: color.adjust(styles.$dark, $lightness: 5%);
   transition: all 0.3s ease;
+  color: styles.$light;
 
   &:hover {
     transform: translateY(-5px);
     background-color: styles.$secondary;
   }
 
-  svg {
-    width: 40px;
-    height: 40px;
-    fill: styles.$light;
+  i {
+    font-size: 2.5rem;
+    line-height: 1;
   }
 
   span {
