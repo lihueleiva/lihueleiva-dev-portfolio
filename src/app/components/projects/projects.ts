@@ -17,14 +17,6 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/tu-usuario/kala-ecommerce',
       liveUrl: 'https://kala-ecommerce.web.app/'
     },
-    // Aquí puedes añadir más proyectos en el futuro
-    // {
-    //   title: 'Otro Proyecto',
-    //   description: 'Descripción de tu segundo proyecto...',
-    //   technologies: ['Angular', 'RxJS'],
-    //   imageUrl: 'assets/images/otro-proyecto.png',
-    //   githubUrl: 'https://github.com/tu-usuario/otro-proyecto',
-    //   liveUrl: 'https://otro-proyecto.web.app/'
-    // }
+
   ];
 }
