@@ -1,10 +1,9 @@
 @use 'sass:color';
 @use '../../variables' as styles;
 
-// --- Estilos Base (Mobile-First) ---
 .projects {
   padding-top: 4rem;
-  padding-bottom: 1rem; // Menos padding abajo por el margen de la card
+  padding-bottom: 1rem;
   border-top: 1px solid styles.$secondary;
 
   &__title {
@@ -31,7 +30,7 @@
 
 .project-card {
   margin-bottom: 4rem;
-  text-align: center; // Centramos el texto en móvil
+  text-align: center;
 
   &__image-container {
     background-color: styles.$dark;
@@ -39,7 +38,7 @@
     overflow: hidden;
     border: 1px solid styles.$secondary;
     transition: transform 0.3s ease;
-    margin-bottom: 2rem; // Espacio entre imagen y texto en móvil
+    margin-bottom: 2rem;
 
     &:hover {
       transform: scale(1.03);
@@ -54,13 +53,12 @@
   }
 
   &__content {
-    padding: 0; // Sin padding lateral en móvil
+    padding: 0;
   }
 
   &__title {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    // Aplicamos el gradiente al título del proyecto
     background: linear-gradient(90deg, #b1006a, #8200b3, #4a00b3);
     -webkit-background-clip: text;
     background-clip: text;
@@ -79,7 +77,7 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 2rem;
-    justify-content: center; // Centramos las tecnologías en móvil
+    justify-content: center;
 
     span {
       background-color: styles.$secondary;
@@ -92,8 +90,8 @@
 
   &__buttons {
     display: flex;
-    flex-direction: column; // Apilamos los botones
-    align-items: center; // Centramos los botones
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
   }
 }
@@ -132,7 +130,6 @@
   }
 }
 
-// --- Media Query para Escritorio (≥ 992px) ---
 @media (min-width: 992px) {
   .projects {
     padding-top: 6rem;
@@ -140,7 +137,7 @@
   }
 
   .project-card {
-    text-align: left; // Volvemos a alinear a la izquierda
+    text-align: left;
     margin-bottom: 6rem;
 
     &__image-container {
@@ -160,11 +157,11 @@
     }
 
     &__technologies {
-      justify-content: flex-start; // Alineamos a la izquierda
+      justify-content: flex-start;
     }
 
     &__buttons {
-      flex-direction: row; // Botones en fila
+      flex-direction: row;
     }
   }
 
