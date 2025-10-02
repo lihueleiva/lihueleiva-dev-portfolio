@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Header } from "./components/header/header";
+import { HeaderComponent } from "./components/header/header";
 import { Hero } from "./components/hero/hero";
 import { About } from './components/about/about';
 import { SkillsComponent } from "./components/skills/skills";
@@ -12,9 +12,10 @@ import { FooterComponent } from "./components/footer/footer";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Header, Hero, About, SkillsComponent, ProjectsComponent, CertificationsComponent, Contact, FooterComponent],
+  imports: [HeaderComponent, Hero, About, SkillsComponent, ProjectsComponent, CertificationsComponent, Contact, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class AppComponent {
 }
+
