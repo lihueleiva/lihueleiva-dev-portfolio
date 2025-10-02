@@ -4,7 +4,6 @@
 .skills {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-color: color.adjust(styles.$dark, $lightness: -2%);
 
   &__title {
     text-align: center;
@@ -104,17 +103,11 @@
   }
 }
 
-@media (min-width: 992px) {
+// La media query para la lista de 2 columnas ha sido eliminada.
 
+@media (min-width: 992px) {
   .skills__category h3 {
     text-align: left;
-  }
-}
-
-@media (min-width: 576px) {
-  .skills__list {
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
   }
 }
 

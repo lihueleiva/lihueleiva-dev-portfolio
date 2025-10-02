@@ -1,9 +1,9 @@
 @use '../../variables' as styles;
 
 .certifications {
-  padding: 6rem 0;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   border-top: 1px solid styles.$secondary;
-  background-color: styles.$dark;
 
   &__title {
     text-align: center;
@@ -22,33 +22,72 @@
       transform: translateX(-50%);
       width: 50%;
       height: 4px;
-      background-color: styles.$primary;
+      background: linear-gradient(90deg, #b1006a, #8200b3, #4a00b3, #b1006a);
     }
   }
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
   }
 }
 
 .cert-item {
+  position: relative; // Necesario para el nuevo hover
   display: block;
   border-radius: 15px;
   overflow: hidden;
-  border: 1px solid styles.$secondary;
+  border: 2px solid transparent; // Borde transparente para evitar saltos
   transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, #b1006a, #8200b3, #4a00b3, #081fb6, #b1006a);
+    background-size: 400% 400%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
 
   &:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+
+    &::before {
+      opacity: 1;
+      animation: fluid-gradient-animation 6s linear infinite;
+    }
   }
 
   img {
     width: 100%;
     height: auto;
     display: block;
+  }
+}
+
+@keyframes fluid-gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 100%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
