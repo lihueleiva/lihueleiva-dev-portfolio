@@ -2,15 +2,17 @@
 @use '../../variables' as styles;
 
 .about {
-  padding: 6rem 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   border-top: 1px solid styles.$secondary;
+  text-align: center;
 
   &__image-container {
-    width: 380px;
-    height: 380px;
+    width: 280px;
+    height: 280px;
     background-color: styles.$secondary;
     border-radius: 30px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 3rem auto;
     transform: rotate(-6deg);
     transition: transform 0.3s ease;
 
@@ -20,11 +22,11 @@
   }
 
   &__content {
-    padding-left: 2rem;
+    padding-left: 0;
   }
 
   &__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
     position: relative;
@@ -34,17 +36,49 @@
       content: '';
       position: absolute;
       bottom: -10px;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 50%;
       height: 4px;
-      background-color: styles.$primary;
+      background: linear-gradient(90deg, #ab0268, #990fcb, #8806b8, #081fb6);
     }
   }
 
   &__text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: color.adjust(styles.$light, $lightness: -15%);
     margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .about {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    text-align: left;
+
+    &__image-container {
+      width: 380px;
+      height: 380px;
+      margin-bottom: 0;
+    }
+
+    &__content {
+      padding-left: 2rem;
+    }
+
+    &__title {
+      font-size: 2.5rem;
+
+      &::after {
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+
+    &__text {
+      font-size: 1.1rem;
+    }
   }
 }

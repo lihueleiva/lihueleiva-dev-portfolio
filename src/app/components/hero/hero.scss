@@ -1,12 +1,12 @@
 @use 'sass:color';
 @use '../../variables' as styles;
 
-
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 100px 0 40px 0;
+  padding-top: 100px;
+  padding-bottom: 40px;
   text-align: center;
 
   &__title {
@@ -89,7 +89,6 @@
     }
   }
 }
-
 
 @media (min-width: 768px) {
   .hero {

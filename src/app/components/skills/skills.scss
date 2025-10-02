@@ -2,8 +2,8 @@
 @use '../../variables' as styles;
 
 .skills {
-  padding: 6rem 0;
-  background-color: color.adjust(styles.$dark, $lightness: -2%);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 
   &__title {
     text-align: center;
@@ -22,7 +22,7 @@
       transform: translateX(-50%);
       width: 50%;
       height: 4px;
-      background-color: styles.$primary;
+      background: linear-gradient(90deg, #b1006a, #8200b3, #4a00b3, #b1006a);
     }
   }
 
@@ -36,42 +36,92 @@
 
     h3 {
       font-size: 1.5rem;
-      color: styles.$primary;
       margin-bottom: 1.5rem;
       border-bottom: 1px solid styles.$secondary;
       padding-bottom: 1rem;
+      background: linear-gradient(90deg, #b1006a, #8200b3, #4a00b3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
   }
 
   &__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
 .skill-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
-  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
   background-color: color.adjust(styles.$dark, $lightness: 5%);
   transition: all 0.3s ease;
   color: styles.$light;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, #b1006a, #8200b3, #4a00b3, #081fb6, #b1006a);
+    background-size: 400% 400%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
 
   &:hover {
     transform: translateY(-5px);
-    background-color: styles.$secondary;
+
+    &::before {
+      opacity: 1;
+      animation: fluid-gradient-animation 6s linear infinite;
+    }
   }
 
   i {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     line-height: 1;
+  }
+
+  svg {
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   span {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+}
+
+@keyframes fluid-gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 50% 100%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  75% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 0% 50%;
   }
 }
