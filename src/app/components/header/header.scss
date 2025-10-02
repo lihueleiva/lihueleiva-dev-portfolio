@@ -16,9 +16,13 @@
     font-weight: 700;
     font-size: 1.5rem;
     color: styles.$light;
+    transition: color 0.3s ease;
 
     &:hover {
-      color: styles.$primary;
+      background: linear-gradient(90deg, #b1006a, #8200b3, #4a00b3);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
   }
 
@@ -34,9 +38,13 @@
       color: styles.$light;
       font-weight: 700;
       font-size: 1rem;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: styles.$primary;
+        background: linear-gradient(90deg, #b7026e, #8200b3, #140bbb);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
       }
     }
   }
