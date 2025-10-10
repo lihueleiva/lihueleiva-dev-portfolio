@@ -82,10 +82,51 @@
     background-color: transparent;
     color: styles.$light;
     border: 2px solid styles.$secondary;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: styles.$secondary;
+      transition: left 0.35s ease-in-out;
+      z-index: -1;
+    }
 
     &:hover {
-      background-color: styles.$secondary;
       transform: translateY(-3px);
+
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  &--linkedin {
+    background-color: #0A66C2;
+    color: styles.$light;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      fill: currentColor;
+    }
+
+    &:hover {
+      background-color: color.adjust(#0A66C2, $lightness: +7%);
+      transform: translateY(-3px);
+      box-shadow: 0 0 12px rgba(10, 102, 194, 0.6),
+        0 0 20px rgba(10, 102, 194, 0.4);
     }
   }
 }
@@ -123,7 +164,6 @@
     width: auto;
   }
 }
-
 
 @keyframes gradient-animation {
   0% {
