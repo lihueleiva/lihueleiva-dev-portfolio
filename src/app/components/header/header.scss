@@ -45,6 +45,45 @@
     }
   }
 
+  &__lang {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    border: 1px solid styles.$secondary;
+    background-color: rgba(255, 255, 255, 0.03);
+
+    .lang-divider {
+      color: styles.$secondary;
+      font-size: 0.8rem;
+      user-select: none;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: rgba(245, 245, 255, 0.6);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+      padding: 0.15rem 0.3rem;
+      transition: all 0.25s ease;
+
+      &:hover {
+        color: styles.$light;
+      }
+
+      &--active {
+        background: linear-gradient(90deg, #b1006a, #8200b3, #4a00b3);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+
   @media (min-width: 768px) {
     &__container {
       justify-content: space-between;
@@ -74,6 +113,10 @@
       a {
         font-size: 1rem;
       }
+    }
+
+    &__lang .lang-btn {
+      font-size: 0.85rem;
     }
   }
 }

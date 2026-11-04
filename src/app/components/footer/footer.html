@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="footer__container container">
     <div class="footer__tech">
-      <span class="footer__tech-label">Construido con:</span>
+      <span class="footer__tech-label">{{ i18n.t().footer.builtWith }}</span>
       <div class="footer__tech-icons">
         <a href="https://angular.io/" target="_blank" rel="noopener noreferrer" title="Angular" class="tech-icon tech-icon--angular">
           <img src="assets/logos/Angular_full_color_logo.svg" alt="Logo de Angular" />
@@ -13,7 +13,7 @@
     </div>
 
     <div class="footer__copyright">
-      <p>&copy; 2025 <a (click)="scrollToTop()" class="footer__nav-link">Lihue Leiva</a>. Todos los derechos reservados.</p>
+      <p>&copy; 2026 <a (click)="scrollToTop()" class="footer__nav-link">Lihue Leiva</a>. {{ i18n.t().footer.rights }}</p>
     </div>
 
     <div class="footer__socials">

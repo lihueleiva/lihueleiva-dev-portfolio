@@ -1,9 +1,9 @@
 <section id="certifications" class="certifications container">
-  <h2 class="certifications__title">Formación y Certificaciones</h2>
+  <h2 class="certifications__title">{{ i18n.t().certifications.title }}</h2>
   <div class="certifications__grid">
     @for (cert of certifications; track cert.title) {
       <a class="cert-item" [href]="cert.imageUrl" target="_blank">
-        <img [src]="cert.imageUrl" [alt]="'Certificado de ' + cert.title + ' por ' + cert.issuer">
+        <img [src]="cert.imageUrl" [alt]="i18n.t().certifications.certAltPrefix + cert.title + i18n.t().certifications.byLabel + cert.issuer">
       </a>
     }
   </div>

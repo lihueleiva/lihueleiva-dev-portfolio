@@ -3,9 +3,28 @@
     <a href="#" class="header__logo">Lihue Leiva</a>
 
     <ul class="header__nav">
-      <li><a href="#about">Sobre Mí</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#about">{{ i18n.t().nav.about }}</a></li>
+      <li><a href="#projects">{{ i18n.t().nav.projects }}</a></li>
+      <li><a href="#contact">{{ i18n.t().nav.contact }}</a></li>
+      <li class="header__lang">
+        <button
+          type="button"
+          class="lang-btn"
+          [class.lang-btn--active]="i18n.lang() === 'es'"
+          (click)="i18n.setLang('es')"
+          aria-label="Cambiar idioma a Español">
+          ES
+        </button>
+        <span class="lang-divider">/</span>
+        <button
+          type="button"
+          class="lang-btn"
+          [class.lang-btn--active]="i18n.lang() === 'en'"
+          (click)="i18n.setLang('en')"
+          aria-label="Switch language to English">
+          EN
+        </button>
+      </li>
     </ul>
   </nav>
 </header>

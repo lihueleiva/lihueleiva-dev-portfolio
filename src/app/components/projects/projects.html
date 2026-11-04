@@ -1,14 +1,14 @@
 <section id="projects" class="projects container">
-  <h2 class="projects__title">Mis Proyectos</h2>
+  <h2 class="projects__title">{{ i18n.t().projects.title }}</h2>
 
-  @for (project of projects; track project.title; let i = $index) {
+  @for (project of i18n.t().projects.items; track project.title; let i = $index) {
     <div class="project-card row align-items-center">
       <div class="col-12 col-lg-7" [class.order-lg-2]="i % 2 === 0">
         <div class="project-card__image-container">
           @for (image of project.images; track $index) {
-            <img 
-              [src]="image" 
-              [alt]="'Captura de pantalla del proyecto ' + project.title"
+            <img
+              [src]="image"
+              [alt]="i18n.t().projects.screenshotAltPrefix + project.title"
               (click)="openLightbox(image)"
               [class.project-card__image--first]="$index === 0"
               [class.project-card__image--second]="$index === 1"
@@ -25,7 +25,6 @@
               <span>{{ tech }}</span>
             }
           </div>
-
         </div>
       </div>
     </div>
@@ -35,7 +34,7 @@
     <div class="lightbox" [class.fade-out]="!selectedImage" (click)="closeLightbox()">
       <div class="lightbox__content" (click)="$event.stopPropagation()">
         <button class="lightbox__close" (click)="closeLightbox()">✕</button>
-        <img [src]="selectedImage" [alt]="'Imagen ampliada'" class="lightbox__image">
+        <img [src]="selectedImage" [alt]="i18n.t().projects.enlargedAlt" class="lightbox__image">
       </div>
     </div>
   }

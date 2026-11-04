@@ -1,41 +1,41 @@
 <section id="contact" class="contact container">
-  <h2 class="contact__title">Contacto</h2>
+  <h2 class="contact__title">{{ i18n.t().contact.title }}</h2>
   <p class="contact__subtitle">
-    ¿Interesado en colaborar o tienes alguna pregunta? <br>
-    Envíame un mensaje.
+    {{ i18n.t().contact.subtitleLine1 }} <br>
+    {{ i18n.t().contact.subtitleLine2 }}
   </p>
 
   <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
     <div class="form-group">
-      <label for="name">Nombre</label>
+      <label for="name">{{ i18n.t().contact.nameLabel }}</label>
       <input type="text" id="name" formControlName="name" required>
       <div *ngIf="contactForm.get('name')?.invalid && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)" class="form-error">
-        <small *ngIf="contactForm.get('name')?.hasError('required')">El nombre es requerido.</small>
+        <small *ngIf="contactForm.get('name')?.hasError('required')">{{ i18n.t().contact.nameRequired }}</small>
       </div>
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
+      <label for="email">{{ i18n.t().contact.emailLabel }}</label>
       <input type="email" id="email" formControlName="email" required>
       <div *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)" class="form-error">
-        <small *ngIf="contactForm.get('email')?.hasError('required')">El email es requerido.</small>
-        <small *ngIf="contactForm.get('email')?.hasError('email')">Por favor, introduce un email válido.</small>
+        <small *ngIf="contactForm.get('email')?.hasError('required')">{{ i18n.t().contact.emailRequired }}</small>
+        <small *ngIf="contactForm.get('email')?.hasError('email')">{{ i18n.t().contact.emailInvalid }}</small>
       </div>
     </div>
     <div class="form-group">
-      <label for="message">Mensaje</label>
+      <label for="message">{{ i18n.t().contact.messageLabel }}</label>
       <textarea id="message" formControlName="message" rows="5" required></textarea>
       <div *ngIf="contactForm.get('message')?.invalid && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)" class="form-error">
-        <small *ngIf="contactForm.get('message')?.hasError('required')">El mensaje es requerido.</small>
+        <small *ngIf="contactForm.get('message')?.hasError('required')">{{ i18n.t().contact.messageRequired }}</small>
       </div>
     </div>
 
-    <button type="submit" class="btn btn--primary" [disabled]="contactForm.invalid || formStatus === 'Enviando...'">
-      {{ formStatus === 'Enviando...' ? 'Enviando...' : 'Enviar Mensaje' }}
+    <button type="submit" class="btn btn--primary" [disabled]="contactForm.invalid || formStatus === 'sending'">
+      {{ formStatus === 'sending' ? i18n.t().contact.sending : i18n.t().contact.sendButton }}
     </button>
   </form>
 
-  <div *ngIf="formStatus && formStatus !== 'Enviando...'" class="form-status-alert" [class.form-status-alert--success]="formStatus === '¡Mensaje enviado con éxito!'" [class.form-status-alert--error]="formStatus !== '¡Mensaje enviado con éxito!'">
-    <span>{{ formStatus }}</span>
-    <button class="close-btn" (click)="closeStatusMessage()">×</button>
+  <div *ngIf="formStatus === 'success' || formStatus === 'error'" class="form-status-alert" [class.form-status-alert--success]="formStatus === 'success'" [class.form-status-alert--error]="formStatus === 'error'">
+    <span>{{ formStatus === 'success' ? i18n.t().contact.successMessage : i18n.t().contact.errorMessage }}</span>
+    <button class="close-btn" (click)="closeStatusMessage()">✕</button>
   </div>
 </section>

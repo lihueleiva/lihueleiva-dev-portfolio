@@ -1,64 +1,66 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-certifications',
   standalone: true,
   imports: [],
   templateUrl: './certifications.html',
-  styleUrl: './certifications.scss'
+  styleUrl: './certifications.scss',
 })
 export class CertificationsComponent {
+  public readonly i18n = inject(I18nService);
+
   public certifications = [
     {
       title: 'Angular',
       issuer: 'Coderhouse',
-      imageUrl: 'assets/images/certs/angular-coderhouse.png'
+      imageUrl: 'assets/images/certs/angular-coderhouse.png',
     },
     {
       title: 'Angular (Sololearn)',
       issuer: 'Sololearn',
-      imageUrl: 'assets/images/certs/angular-sololearn.jpg'
+      imageUrl: 'assets/images/certs/angular-sololearn.jpg',
     },
     {
       title: 'Desarrollo Web',
       issuer: 'Coderhouse',
-      imageUrl: 'assets/images/certs/desarrollo-web-coderhouse.png'
+      imageUrl: 'assets/images/certs/desarrollo-web-coderhouse.png',
     },
     {
-      title: 'Desarrollo Web (Sololearn)',
+      title: 'Web Development',
       issuer: 'Sololearn',
-      imageUrl: 'assets/images/certs/web-development.png'
+      imageUrl: 'assets/images/certs/web-development.png',
     },
     {
       title: 'JavaScript Intermediate',
       issuer: 'Sololearn',
-      imageUrl: 'assets/images/certs/javascript-sololearn.png'
+      imageUrl: 'assets/images/certs/javascript-sololearn.png',
     },
     {
       title: 'JavaScript',
       issuer: 'EDteam',
-      imageUrl: 'assets/images/certs/certificado-curso-javascript.png'
+      imageUrl: 'assets/images/certs/certificado-curso-javascript.png',
     },
     {
       title: 'Programación Orientada a Objetos',
       issuer: 'EDteam',
-      imageUrl: 'assets/images/certs/certificado-curso-poo.png'
+      imageUrl: 'assets/images/certs/certificado-curso-poo.png',
     },
     {
       title: 'Prompt Engineering',
       issuer: 'Sololearn',
-      imageUrl: 'assets/images/certs/prompt-engineering.png'
+      imageUrl: 'assets/images/certs/prompt-engineering.png',
     },
     {
       title: 'Vibe Coding',
       issuer: 'Sololearn',
-      imageUrl: 'assets/images/certs/vibe-coding.jpg'
+      imageUrl: 'assets/images/certs/vibe-coding.jpg',
     },
     {
       title: 'JavaScript Introduction',
       issuer: 'Sololearn',
-      imageUrl: 'assets/images/certs/javascript-sololearn-introduction.png'
+      imageUrl: 'assets/images/certs/javascript-sololearn-introduction.png',
     },
-
   ];
 }

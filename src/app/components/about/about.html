@@ -2,18 +2,15 @@
   <div class="row align-items-center">
     <div class="col-12 col-lg-6">
       <div class="about__image-container">
-        </div>
+      </div>
     </div>
 
     <div class="col-12 col-lg-6">
       <div class="about__content">
-        <h2 class="about__title">Sobre Mí</h2>
-        <p class="about__text">
-          Soy Desarrollador Frontend con experiencia sólida en el ecosistema de Angular, JavaScript y TypeScript. Mi formación combina un fuerte perfil autodidacta con certificaciones en plataformas como Coderhouse y DevTalles, donde me especialicé en diseño de interfaces (UI), SCSS y desarrollo robusto con Node.js.
-
-Me motiva participar en proyectos complejos que me permitan aplicar mi creatividad y capacidad de resolución. He cumplido diferentes roles en equipos de trabajo, siempre con el foco puesto en construir aplicaciones escalables y mejorar la experiencia del usuario. Busco seguir aprendiendo y aportando valor técnico en productos que tengan un impacto real.
-        </p>
-
+        <h2 class="about__title">{{ i18n.t().about.title }}</h2>
+        @for (paragraph of i18n.t().about.paragraphs; track $index) {
+          <p class="about__text">{{ paragraph }}</p>
+        }
       </div>
     </div>
   </div>
