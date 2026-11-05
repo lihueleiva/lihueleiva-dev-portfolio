@@ -33,7 +33,7 @@
   @if (selectedImage) {
     <div class="lightbox" [class.fade-out]="!selectedImage" (click)="closeLightbox()">
       <div class="lightbox__content" (click)="$event.stopPropagation()">
-        <button class="lightbox__close" (click)="closeLightbox()">✕</button>
+        <button type="button" class="lightbox__close" (click)="closeLightbox()">✕</button>
         <img [src]="selectedImage" [alt]="i18n.t().projects.enlargedAlt" class="lightbox__image">
       </div>
     </div>

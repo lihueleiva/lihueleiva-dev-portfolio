@@ -1,18 +1,17 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import emailjs from '@emailjs/browser';
 import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class ContactComponent implements OnInit {
-  public readonly i18n = inject(I18nService);
+  public readonly i18n: I18nService = inject(I18nService);
   contactForm!: FormGroup;
   formStatus: 'idle' | 'sending' | 'success' | 'error' = 'idle';
 

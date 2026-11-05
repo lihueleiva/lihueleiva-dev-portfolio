@@ -9,7 +9,7 @@ import { I18nService } from '../../services/i18n.service';
   styleUrl: './certifications.scss',
 })
 export class CertificationsComponent {
-  public readonly i18n = inject(I18nService);
+  public readonly i18n: I18nService = inject(I18nService);
 
   public certifications = [
     {

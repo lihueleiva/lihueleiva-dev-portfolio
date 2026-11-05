@@ -1,4 +1,4 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, Signal, WritableSignal, computed, signal } from '@angular/core';
 
 export type Lang = 'es' | 'en';
 
@@ -336,9 +336,9 @@ const EN_DICT: PortfolioDictionary = {
   providedIn: 'root',
 })
 export class I18nService {
-  public readonly lang = signal<Lang>('es');
+  public readonly lang: WritableSignal<Lang> = signal<Lang>('es');
 
-  public readonly t = computed<PortfolioDictionary>(() =>
+  public readonly t: Signal<PortfolioDictionary> = computed<PortfolioDictionary>(() =>
     this.lang() === 'es' ? ES_DICT : EN_DICT
   );
 

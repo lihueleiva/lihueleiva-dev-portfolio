@@ -9,5 +9,5 @@ import { I18nService } from '../../services/i18n.service';
   styleUrl: './about.scss',
 })
 export class About {
-  public readonly i18n = inject(I18nService);
+  public readonly i18n: I18nService = inject(I18nService);
 }

@@ -1,16 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { I18nService } from '../../services/i18n.service';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })
 export class ProjectsComponent {
-  public readonly i18n = inject(I18nService);
+  public readonly i18n: I18nService = inject(I18nService);
   public selectedImage: string | null = null;
 
   openLightbox(imageSrc: string): void {
